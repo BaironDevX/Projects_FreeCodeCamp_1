@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    /* display: block; */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#navbar {
+    position: fixed;
+    border-right: 3px solid grey;
+    margin: auto;
+    box-sizing: border-box;
+    max-width: 350px;
+    height: 100vh;
+}
+
+#navbar header {
+    font-size: 20px;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+}
+
+#main-doc {
+    position: absolute;
+    margin-left: 300px;
+    padding: 20px;
+}
+
+.nav-link {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+   
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+   
+}
+
+#navbar ul > li {
+    margin-top: 10px;
+}
+
+#navbar a:hover {
+    color: darkcyan;
+}
+
+.main-section header {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.main-section article {
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+article p, li {
+    line-height: 1.5rem;
+}
+
+code {
+    display: block;
+    white-space: pre-line;
+    line-height: 2;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #f7f7f7;
+    font-family: consolas, Poppins, sans-serif;
+}
+
+.comment-example {
+    color: gray;
+    font-family: consolas, Poppins, sans-serif;
+    font-style: italic;
+}
+
+#reference-mdn {
+    text-decoration: none;
+}
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 768px) {
+    #navbar {
+      position: static;
+      border: none;
+      border-bottom: 2px solid black;
+      margin: auto;
+      box-sizing: border-box;
+      max-width: 100%;
+      height: auto;
+      padding: 10px;
+      
+    }
+
+    #navbar header {
+        font-size: 30px;
+        text-align: center;
+
+    }
+  
+    #navbar ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  
+    #navbar ul > li {
+      margin: 0;
+    }
+  
+    .nav-link {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      border: none;
+    }
+  
+    #main-doc {
+      position: static;
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+    .main-section header {
+      font-size: 20px;
+    }
+  
+    .main-section article {
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    code {
+      font-size: 12px;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+  
+    .comment-example {
+      font-size: 11px;
+    }
+  }
+  

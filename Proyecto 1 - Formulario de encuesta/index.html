@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer satisfaction survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Customer Satisfaction Survey Form</h1>
+    <p id="description">How can we make your next visit even better?</p>
+
+    <form id="survey-form" method="post">
+
+        <!--General Information-->
+
+            <div class="form-group">
+                <label for="name" id="name-label">Name</label>
+                <input type="text" id="name" class="form-bar" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name" id="lastName-label">Last Name</label>
+                <input type="text" name="last-name" id="last-name" class="form-bar" placeholder="Enter your last name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="email-label">Email</label>
+                <input type="email" id="email" class="form-bar" name="email" placeholder="Enter your mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" id="number-label">ID Client</label>
+                <input type="number" id="number" class="form-bar" placeholder="0000" min="1" max="9999" required>
+            </div>
+
+        <!--Food quality-->
+
+        <div class="form-group">
+            <label for="dropdown">How do you rate the quality of our food?</label>
+                <select name="option" id="dropdown">
+                    <option value="0">Select an option</option>
+                    <option value="1">Excellent</option>
+                    <option value="2">Very good</option>
+                    <option value="3">Good</option>
+                    <option value="4">Regular</option>
+                    <option value="5">Bad</option>
+                </select>
+        </div>
+           
+         <!--Recommendation-->
+
+         <div class="form-group">
+            <p>Would you recommend our restaurant to a friend?</p> 
+            <label for="definitely"><input type="radio" name="recommend" id="definitely" class="radio-button" value="definitely" checked>Definitely</label>
+
+            <label for="maybe"><input type="radio" name="recommend" id="maybe" class="radio-button"value="maybe">Maybe</label>
+
+            <label for="not-sure"><input type="radio" name="recommend" id="not-sure" class="radio-button"value="not-sure">Not sure</label>
+         </div>
+            
+         <!--Feedbacks-->
+         <div class="form-group">
+            <p>What could we do to improve? <span id="check-span">(Check all that apply)</span>
+            </p>
+
+            <label for="quality-food"><input type="checkbox" value="quality-food" id="quality-food" class="checkbox-button" >Improve the quality of food</label>
+
+            <label for="expand-menu"><input type="checkbox" value="expand-menu" id="expand-menu" class="checkbox-button" >Expand menu</label>
+
+            <label for="reduce-time"><input type="checkbox" value="reduce-time" id="reduce-time" class="checkbox-button" >Reduce waiting times</label>
+
+            <label for="improve-customer"><input type="checkbox" value="improve-customer" id="improve-customer" class="checkbox-button" >Improve customer service</label>
+
+            <label for="more-options"><input type="checkbox" value="more-options" id="more-options" class="checkbox-button" >Offer more vegetarian or vegan options</label>
+
+            <label for="reduce-prices"><input type="checkbox" value="reduce-prices" id="reduce-prices" class="checkbox-button" >Reduce prices</label>
+
+            <label for="improve-cleanliness"><input type="checkbox" value="improve-cleanliness" id="improve-cleanliness" class="checkbox-button" >Improve restaurant cleanliness</label>
+
+            <label for="improve-lighting-music"><input type="checkbox" value="improve-lighting-music" id="improve-lighting-music" class="checkbox-button" >Improve ambient lighting and music</label>
+
+            <label for="promotions-discounts"><input type="checkbox" value="promotions-discounts" id="promotions-discounts" class="checkbox-button" >Offer special promotions or discounts</label>
+
+            <label for="electronic-payment"><input type="checkbox" value="electronic-payment" id="electronic-payment" class="checkbox-button" >Add electronic payment options</label>
+         </div>
+            
+
+         <!--Comments-->
+         <div class="form-group">
+            <p>Any comments or suggestions?</p>
+            <textarea name="comments" id="comments" cols="30" rows="5" placeholder="Enter your comment here..."></textarea>
+         </div>
+          
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</body>
+</html>

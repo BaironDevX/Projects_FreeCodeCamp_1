@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical documentation HTML5</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <nav id="navbar">
+        <header>
+            TypeScript Documentation
+        </header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#Introduction_to_Typescript">Introduction to TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Data_Types_in_Typescript">Data Types in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Variables_in_Typescript">Variables in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Functions_in_Typescript">Functions in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Classes_in_Typescript">Classes in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Interfaces_in_Typescript">Interfaces in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Inheritance_in_Typescript">Inheritance in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Generics_in_Typescript">Generics in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Modules_in_Typescript">Modules in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Namespaces_in_Typescript">Namespaces in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Decorators_in_Typescript">Decorators in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Type_annotations_in_Typescript">Type annotations in TypeScript</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Configuring_Typescript_in_projects">Configuring TypeScript in projects</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#Reference">Reference</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction_to_Typescript">
+            <header>
+                Introduction to TypeScript
+            </header>
+            <article>
+                <p>TypeScript is a high-level programming language that implements many of the most common object-oriented programming mechanisms, being able to extract great benefits that will be especially desirable in large applications, capable of scaling correctly throughout their maintenance time.
+                <br><br>
+                The fundamental feature of TypeScript is that it compiles to native Javascript, so it can be used in any project where Javascript is being used. In other words, when you use TypeScript at some point it compiles, converting your code to regular Javascript. The browser, or any other platform running Javascript, will never know that the original code was written in TypeScript, because the only thing it will ever run is the compiled Javascript.
+                <br><br>
+                In summary, TypeScript is what is known as a "superset" of Javascript, providing advanced tools for programming that bring great benefits to projects. </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Data_Types_in_Typescript">
+            <header>
+                Data Types in TypeScript
+            </header>
+            <article>
+                <p>Among the types of data in TypeScript we can find:</p>
+                <br>
+                <ul>
+                    <li>Text chains (strings)</li>
+                    <li>numbers</li>
+                    <li>Booleans (true & false)</li>
+                    <li>Any</li>
+                    <li>arrays</li>
+                    <li>tuples</li>
+                    <li>Enumerated (enum)</li>
+                    <li>void</li>
+                    <li>null</li>
+                    <li>Undefined</li>
+                    <li>object</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="Variables_in_Typescript">
+            <header>
+                Variables in TypeScript
+            </header>
+            <article>
+                <p>TypeScript is a language that is based on JavaScript and the way to declare a variable is quite similar. Let's see an example:</p>
+                <br>
+
+                <code> <span class="comment-example">// As pseudo code</span>
+                let variableName:dataType = "Value or information of the variable";
+                <span class="comment-example">// Declaring a variable and assigning it a value</span>
+                let userId:number= 001;
+                </code>
+                <br>
+                <p>The biggest difference is that now the type of data that variable is going to contain is specified explicitly, ALTHOUGH! TypeScript has the ability to declare variables in an inferred way.</p>
+
+                <p>Explicitly declaring a variable is as it is in the previous example, this way we make sure that this is the data type that we are going to use during the life cycle of the program.
+                The way to declare it inferred is without determining the type of data we want to use. Let's see it in code.</p>
+
+                <code><span class="comment-example">// Explicit form</span>
+                let songName:string = "Raining Blood";
+                <span class="comment-example">// Inferred form</span>
+                let songName = "Raining Blood"; <span class="comment-example">// As in JS</span>
+                </code>
+
+                <p>TypeScript has the ability to recognize the data type even though it was not explicitly declared. Mutability is not applied 100% in case you want to reassign a value to a variable; if the songName variable undergoes any change in its value, this must be a string and not another data type.</p>
+
+                <code>let songName = "Raining Blood";
+                <span class="comment-example">// Reassigning the value of the variable</span>
+                songName = "Suckerpunch";//Reassign without errors
+                <span class="comment-example">// Reassigning another data type </span>
+                songName = 02;// Error due to data type</code>
+
+                <p>Finally, to make a variable accept any type of data we use <i>"any"</i></p>
+
+                <code>let firstRandomData:any = "A data as string";
+
+                let secondRandomData: any = true;
+
+                let thirdDataRandom: any = !1;</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Functions_in_Typescript">
+            <header>
+                Functions in TypeScript
+            </header>
+
+            <article>
+                <p>Functions are the fundamental building block of any application in JavaScript. They’re how you build up layers of abstraction, mimicking classes, information hiding, and modules. In TypeScript, while there are classes, namespaces, and modules, functions still play the key role in describing how to do things. TypeScript also adds some new capabilities to the standard JavaScript functions to make them easier to work with.</p>
+                <br>
+                <p>To begin, just as in JavaScript, TypeScript functions can be created both as a named function or as an anonymous function. This allows you to choose the most appropriate approach for your application, whether you’re building a list of functions in an API or a one-off function to hand off to another function.
+
+                To quickly recap what these two approaches look like in JavaScript:</p>
+
+                <code><span class="comment-example">// Named function</span>
+                    function add(x, y) {
+                      return x + y;
+                    }
+                     
+                    <span class="comment-example">// Anonymous function</span>
+                    let myAdd = function (x, y) {
+                      return x + y;
+                    };
+                </code>
+
+                <br>
+
+                <p>Just as in JavaScript, functions can refer to variables outside of the function body. When they do so, they’re said to capture these variables. While understanding how this works (and the trade-offs when using this technique) is outside of the scope of this article, having a firm understanding how this mechanic works is an important piece of working with JavaScript and TypeScript.</p>
+
+                <code>let z = 100;
+                    function addToZ(x, y) {
+                      return x + y + z;
+                    }
+                </code>
+            </article>
+
+            <p></p>
+        </section>
+
+        <section class="main-section" id="Classes_in_Typescript">
+            <header>
+                Classes in TypeScript
+            </header>
+
+            <article>
+                <p>Traditional JavaScript uses functions and prototype-based inheritance to build up reusable components, but this may feel a bit awkward to programmers more comfortable with an object-oriented approach, where classes inherit functionality and objects are built from these classes. Starting with ECMAScript 2015, also known as ECMAScript 6, JavaScript programmers can build their applications using this object-oriented class-based approach. In TypeScript, we allow developers to use these techniques now, and compile them down to JavaScript that works across all major browsers and platforms, without having to wait for the next version of JavaScript.</p>
+                <br>
+                <p>Let’s take a look at a simple class-based example:
+                </p>
+
+                <code>class Greeter {
+                    greeting: string;
+                   
+                    constructor(message: string) {
+                      this.greeting = message;
+                    }
+                   
+                    greet() {
+                      return "Hello, " + this.greeting;
+                    }
+                  }
+                  let greeter = new Greeter("world");
+                </code>
+
+                <p>The syntax should look familiar if you’ve used C# or Java before. We declare a new class <b>Greeter</b>. This class has three members: a property called <b>greeting</b>, a constructor, and a method <b>greet</b>. <br>
+                
+                You’ll notice that in the class when we refer to one of the members of the class we prepend this.. This denotes that it’s a member access.
+                    
+                In the last line we construct an instance of the Greeter class using new. This calls into the constructor we defined earlier, creating a new object with the Greeter shape, and running the constructor to initialize it.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Interfaces_in_Typescript">
+            <header>
+                Interfaces in TypeScript
+            </header>
+
+            <article>
+                <p>One of TypeScript’s core principles is that type checking focuses on the <i>shape</i> that values have. This is sometimes called “duck typing” or “structural subtyping”. In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project. <br><br>
+
+                The easiest way to see how interfaces work is to start with a simple example:    
+                </p>
+
+                <code>function printLabel(labeledObj: { label: string }) {
+                    console.log(labeledObj.label);
+                  }
+
+                  let myObj = { size: 10, label: "Size 10 Object" };
+                  printLabel(myObj);</code>
+                
+                <p>The type checker checks the call to <b>printLabel</b>. The printLabel function has a single parameter that requires that the object passed in has a property called <b>label</b> of type <b>string</b>. Notice that our object actually has more properties than this, but the compiler only checks that at least the ones required are present and match the types required. There are some cases where TypeScript isn’t as lenient, which we’ll cover in a bit.
+                <br>
+                We can write the same example again, this time using an interface to describe the requirement of having the <b>label</b> property that is a string:</p>
+
+                <code>interface LabeledValue {
+                    label: string;
+                  }
+                   
+                  function printLabel(labeledObj: LabeledValue) {
+                    console.log(labeledObj.label);
+                  }
+                   
+                  let myObj = { size: 10, label: "Size 10 Object" };
+                  printLabel(myObj);</code>
+                
+                <p>The interface <b>LabeledValue</b> is a name we can now use to describe the requirement in the previous example. It still represents having a single property called <b>label</b> that is of type <b>string</b>. Notice we didn’t have to explicitly say that the object we pass to <b>printLabel</b> implements this interface like we might have to in other languages. Here, it’s only the shape that matters. If the object we pass to the function meets the requirements listed, then it’s allowed.
+                <br>
+                It’s worth pointing out that the type checker does not require that these properties come in any sort of order, only that the properties the interface requires are present and have the required type.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Inheritance_in_Typescript">
+            <header>
+                Inheritance in TypeScript
+            </header>
+
+            <article>
+                <p>A class can reuse the properties and methods of another class. This is called <b>inheritance</b> in TypeScript.
+                <br>
+                The class which inherits properties and methods is called the <b>child class</b>. And the class whose properties and methods are inherited is known as the <b>parent class</b>. These names come from the nature that children inherit genes from parents.
+                <br>
+                Inheritance allows you to reuse the functionality of an existing class without rewriting it.
+                <br>
+                JavaScript uses prototypal inheritance, not classical inheritance like Java or C#. ES6 introduces the class syntax that is simply the syntactic sugar of the prototypal inheritance. TypeScript supports inheritance like ES6.
+                <br><br>
+                Suppose you have the following Person class:
+                </p>
+
+                <code>class Person {
+                    constructor(private firstName: string, private lastName: string) {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                    }
+                    getFullName(): string {
+                        return `${this.firstName} ${this.lastName}`;
+                    }
+                    describe(): string {
+                        return `This is ${this.firstName} ${this.lastName}.`;
+                    }
+                }
+                </code>
+
+                <p>To inherit a class, you use the <b>extends</b> keyword. For example the following <b>Employee</b> class inherits the <b>Employee</b> class:</p>
+
+                <code>class Employee extends Person {
+                   <span class="comment-example"> //..</span>
+                }</code>
+
+                <p>In this example, the <b>Employee</b> is a child class and the <b>Person</b> is the parent class.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Generics_in_Typescript">
+            <header>
+                Generics in TypeScript
+            </header>
+
+            <article>
+                <p>Generics in TypeScript are a feature that allows you to write code that can work with different types of data safely. Instead of writing functions or classes for a specific data type, you can write them to work with any type of data that is passed to them.
+                <br>
+                For example, suppose you have a function that takes an array of numbers and returns the largest number in the array. You could write the function like this:
+                </p>
+
+                <code>function max(numbers: number[]): number {
+                    let result = numbers[0];
+                    for (let i = 1; i < numbers.length; i++) {
+                      if (numbers[i] > result) {
+                        result = numbers[i];
+                      }
+                    }
+                    return result;
+                  }
+                </code>
+
+                <p>This function works fine if you only need to work with arrays of numbers. But if you wanted to use the same function with arrays of strings or dates, you would have to write separate versions of the function for each data type. This can be tedious and error-prone.
+                <br>
+                This is where generics come in. You can use a generic type parameter to write the same function in a way that works with any data type that is passed to it. The syntax for a generic parameter is to place a type name in angle brackets (< and >) after the name of the function or class. For example:
+                </p>
+
+                <code>function max&lt;T&gt;(values: T[]): T {
+                    let result = values[0];
+                    for (let i = 1; i < values.length; i++) {
+                      if (values[i] > result) {
+                        result = values[i];
+                      }
+                    }
+                    return result;
+                  }
+                </code>
+
+                  <p>In this example, we use the generic type T as the type of the array elements and as the return type of the function. This means you can call this function with an array of any data type and TypeScript automatically infers the correct type. For example:</p>
+                  
+                <code>const numbers = [1, 2, 3, 4, 5];
+                    const strings = ["hello", "world"];
+                    const dates = [new Date(), new Date(2022, 0, 1)];
+                    
+                    console.log(max(numbers)); <span class="comment-example">// returns 5</span>
+                    console.log(max(strings)); <span class="comment-example">// returns "world"</span>
+                    console.log(max(dates)); <span class="comment-example">// returns the most recent date</span> 
+                </code>
+
+                <p>In this example, the <b>'max'</b> function is used with arrays of numbers, strings, and dates, and TypeScript automatically infers the correct type for each call.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Modules_in_Typescript">
+            <header>
+                Modules in TypeScript
+            </header>
+
+            <article>
+                <p>Modules in TypeScript allow you to organize your code into logical units that can be easily shared and reused across different parts of your application. A module in TypeScript is defined as a file that contains code, and the code inside the module is scoped to that file.
+                <br><br>
+                Here's an example of a simple module in TypeScript that exports a function:
+                </p>
+
+                <code><span class="comment-example">// file: greeter.ts</span>
+                    export function greet(name: string) {
+                      console.log(`Hello, ${name}!`);
+                    }
+                </code>
+
+                <p>In this example, the <b>'greeter.ts'</b> file defines a module that exports a single function called <b>'greet'</b>. The <b>'export'</b> keyword tells TypeScript that the <b>'greet'</b> function is intended to be used outside of the module, so other files can import and use it.
+                <br><br>
+                Here's an example of how you can import and use the greet function from another file:
+                </p>
+
+                <code><span class="comment-example">// file: main.ts</span>
+                    import { greet } from "./greeter";
+
+                    greet("World");
+                    </code>
+
+                <p>In this example, the <b>'main.ts'</b> file imports the <b>'greet'</b> function from the <b>'greeter.ts'</b> module using the import keyword. The <b>'{}'</b> braces around <b>'greet'</b> are used to specify the specific exported member(s) from the module that you want to import. Then, the <b>'greet'</b> function is called with the argument <b>"World"</b>.
+                <br><br>
+                You can also use the export keyword to export multiple functions, classes, or variables from a module. Here's an example:
+                </p>
+
+                <code><span class="comment-example">// file: math.ts</span>
+                    export function add(a: number, b: number) {
+                      return a + b;
+                    }
+                    
+                    export function subtract(a: number, b: number) {
+                      return a - b;
+                    }
+                    </code>
+
+                <p>In this example, the <b>'math.ts'</b> module exports two functions, <b>'add'</b> and <b>'subtract'</b>, which can be imported and used in other parts of your application.
+                <br><br>
+                Modules in TypeScript also support default exports, which allow you to export a single value as the "default" export for a module. Here's an example:
+                </p>
+
+                <code><span class="comment-example">// file: logger.ts</span>
+                    export default function log(message: string) {
+                    console.log(message);
+                    }
+                </code>
+
+                <p>In this example, the logger.ts module exports a single function called log as the default export. You can import the default export using the import keyword without braces:</p>
+                
+                <code><span class="comment-example">// file: main.ts</span>
+                    import log from "./logger";
+                    
+                    log("Hello, world!");
+                </code>
+
+                <p>In this example, the <b>'log'</b> function from the <b>'logger.ts'</b> module is imported and used in the <b>'main.ts'</b> file.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Namespaces_in_Typescript">
+            <header>
+                Namespaces in TypeScript
+            </header>
+
+            <article>
+                <p>In TypeScript, a namespace is a way to organize code into a named scope. A namespace is defined using the namespace keyword, followed by the name of the namespace and a set of curly braces {} containing the code to be included in the namespace.
+                <br><br>
+                Here's an example of a simple namespace in TypeScript:
+                </p>
+
+                <code>namespace MyNamespace {
+                    export const PI = 3.14159;
+                  
+                    export function greet(name: string) {
+                      console.log(`Hello, ${name}!`);
+                    }
+                  }
+                </code>
+                
+                <p>In this example, the <b>'MyNamespace'</b> namespace defines a constant <b>'PI'</b> and a function <b>'greet'</b>. The <b>'export'</b> keyword is used to make these members available outside of the namespace, so they can be accessed from other parts of your application.
+                <br><br>
+                To use the members of a namespace, you must qualify them with the namespace name using the dot notation. Here's an example:
+                </p>
+
+                <code>console.log(MyNamespace.PI);
+                    MyNamespace.greet("World");
+                </code>
+
+                <p>In this example, the <b>'PI'</b> constant and <b>''greet</b> function from the <b>'MyNamespace'</b> namespace are accessed using the dot notation.
+                <br><br>
+                Namespaces can also be nested to create hierarchical namespaces. Here's an example:   
+                </p>
+
+                <code>namespace MyNamespace {
+                    export namespace SubNamespace {
+                      export const MESSAGE = "Hello, World!";
+                    }
+                  }
+                </code>
+
+                <p>In this example, the <b>'MyNamespace'</b> namespace contains a nested <b>'SubNamespace'</b> namespace, which defines a constant <b>'MESSAGE'</b>.
+                <br><br>
+                To access the <b>'MESSAGE'</b> constant, you must qualify it with both namespace names using the dot notation:
+                </p>
+
+                <code>console.log(MyNamespace.SubNamespace.MESSAGE);
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Decorators_in_Typescript">
+            <header>
+                Decorators in TypeScript
+            </header>
+
+            <article>
+                <p>In TypeScript, a decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. Decorators use the form <b>'@expression'</b>, where <b>'expression'</b> must evaluate to a function that will be called at runtime with information about the decorated declaration.
+                <br><br>
+                Here's an example of a decorator in TypeScript:
+                </p>
+
+                <code>function classDecorator<T extends { new(...args: any[]): {} }>(constructor: T) {
+                    return class extends constructor {
+                      newProperty = "new property";
+                      hello = "override";
+                    };
+                  }
+                  
+                  @classDecorator
+                  class MyClass {
+                    property = "property";
+                  
+                    constructor(public message: string) {}
+                  
+                    sayHello() {
+                      return `Hello, ${this.message}!`;
+                    }
+                  }
+                  
+                  console.log(new MyClass("world").sayHello());
+                </code>
+
+                <p>In this example, we define a decorator function called <b>'classDecorator'</b> that takes a constructor function as its argument. The decorator function returns a new constructor function that extends the original constructor function with some additional properties.
+                <br><br>
+                We then apply the <b>'classDecorator'</b> decorator to the <b>'MyClass'</b> class declaration using the <b>'@'</b> syntax. When the <b>'MyClass'</b> constructor is called, the decorated constructor function is called instead, and the properties it adds are included in the resulting object.
+                <br><br>
+                Decorators can be a powerful tool for modifying the behavior of classes, methods, and other declarations in TypeScript. They can be used to implement cross-cutting concerns like logging, caching, and validation, and can also be used to implement other language features like mixins and aspects.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Type_annotations_in_Typescript">
+            <header>
+                Type annotations in TypeScript
+            </header>
+
+            <article>
+                <p>In TypeScript, a type annotation is a way to specify the type of a variable, parameter, property, or return value. Type annotations use the syntax <b>': type'</b> after the name of the declaration to specify the type. For example:
+                <br>
+                </p>
+
+                <code>let myVariable: number = 42;
+                    function addNumbers(a: number, b: number): number {
+                      return a + b;
+                    }
+                </code>
+
+                <p>In this example, we use type annotations to specify that <b>'myVariable'</b> is of type <b>'number'</b>, and that the <b>'a'</b> and <b>'b'</b> parameters and the return value of the <b>'addNumbers'</b> function are also of type <b>'number'</b>.
+                <br>
+                Type annotations can help catch errors at compile time by ensuring that the types of variables, parameters, and return values are consistent throughout your code. They can also help make your code more self-documenting by making it clear what types of values are expected and returned by your functions and methods.
+                <br><br>
+                Type annotations can also be used with interfaces and classes to specify the types of their properties and methods. Here's an example:
+                </p>
+
+                <code>interface Person {
+                    firstName: string;
+                    lastName: string;
+                    age: number;
+                    sayHello: () => string;
+                  }
+                  
+                  class Employee implements Person {
+                    constructor(
+                      public firstName: string,
+                      public lastName: string,
+                      public age: number,
+                      public salary: number
+                    ) {}
+                  
+                    sayHello() {
+                      return `Hello, my name is ${this.firstName} ${this.lastName} and I make $${this.salary} a year.`;
+                    }
+                  }
+                </code>
+
+                <p>In this example, we define an interface called <b>'Person'</b> that specifies the properties <b>'firstName'</b>, <b>'lastName'</b>, <b>'age'</b>, and <b>'sayHello'</b>. We then define a class called <b>'Employee'</b> that implements the <b>'Person'</b> interface and adds a salary property and an implementation of the <b>'sayHello'</b> method.
+                <br>
+                Using type annotations with interfaces and classes can help ensure that the properties and methods of your objects are used consistently throughout your code.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Configuring_Typescript_in_projects">
+            <header>
+                Configuring TypeScript in projects
+            </header>
+
+            <article>
+                <p>TypeScript can be configured for a project using a <b>'tsconfig.json'</b> file. This file contains configuration options that control how TypeScript compiles your code. Some of the most common options include:
+                <br><br>
+                </p>
+
+                <ul>
+                    <li><b>'target:'</b> Specifies the version of ECMAScript that the compiled code should be compatible with.</li>
+                    <li><b>'module:'</b> Specifies the module system that the compiled code should use.</li>
+                    <li><b>'outDir:'</b> Specifies the output directory for compiled files.</li>
+                    <li><b>'strict:'</b> Enables strict type checking and other strict checks.</li>
+                    <li><b>'include'</b> and exclude: Specifies the files or directories to include or exclude from compilation.</li>
+                </ul>
+                <br>
+                <p>Here's an example <b>'tsconfig.json'</b> file:</p>
+
+                <code>{
+                    "compilerOptions": {
+                      "target": "es6",
+                      "module": "commonjs",
+                      "outDir": "./dist",
+                      "strict": true
+                    },
+                    "include": ["src/**/*"]
+                  }
+                </code>
+
+                <p>In this example, we specify that we want to target ECMAScript 6, use the CommonJS module system, and output compiled files to a <b>'dist'</b> directory. We also enable strict type checking and include all files in the <b>'src'</b> directory in the compilation.
+                <br><br>
+                Once you have created a <b>'tsconfig.json'</b> file, you can compile your TypeScript code using the <b>'tsc'</b> command-line tool, which is included with the TypeScript compiler. Simply navigate to the directory containing your <b>'tsconfig.json'</b> file and run the <b>'tsc'</b> command.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Reference">
+            <header>
+                Reference
+            </header>
+        <article>
+            <p>All the documentation in this page is taken from: </p>
+            <ul>
+                <li><a href="https://www.typescriptlang.org/docs/handbook/variable-declarations.html">https://www.typescriptlang.org/docs/handbook/variable-declarations.html</a></li>
+                <li><a href="https://desarrolloweb.com/articulos/introduccion-a-typescript.html">https://desarrolloweb.com/articulos/introduccion-a-typescript.html</a></li>
+                <li><a href="https://www.deleonnet.com/blog/typescript/tipos-de-datos-y-variables">https://www.deleonnet.com/blog/typescript/tipos-de-datos-y-variables</a></li>
+                <li><a href="https://www.typescripttutorial.net/typescript-tutorial/typescript-inheritance/">https://www.typescripttutorial.net/typescript-tutorial/typescript-inheritance/</a></li>
+            </ul>
+        </article>
+        </section>
+    </main>
+
+    <!--Animación de elementos-->
+    <script> 
+        $(document).ready(function() { // Esta línea asegura que el script se ejecute cuando el DOM esté completamente cargado.
+          $('a[href^="#"]').on('click', function(event) { // Seleccionamos todos los enlaces que apuntan a un elemento con ID dentro del mismo documento.
+            var target = $(this.getAttribute('href')); // Guardamos el destino de la animación en una variable.
+            if( target.length ) { // Verificamos si el destino existe.
+              event.preventDefault(); // Prevenimos el comportamiento predeterminado del enlace.
+              
+              // Creamos la animación, desplazándonos hasta el destino durante 1 segundo.
+              $('html, body').stop().animate({
+                scrollTop: target.offset().top 
+              }, 500);
+            }
+          });
+        });
+      </script>
+</body>
+</html>
